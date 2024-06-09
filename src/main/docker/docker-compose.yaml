@@ -9,8 +9,8 @@ services:
       test: [ "CMD", "pg_isready", "-U", "keycloak" ]
     environment:
       POSTGRES_DB: keycloak
-      POSTGRES_USER: keycloak
-      POSTGRES_PASSWORD: password
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
       - type: tmpfs
         target: /var/lib/postgresql/data
